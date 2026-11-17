@@ -43,22 +43,39 @@ export function ärÖppet(veckodag: string, klockslag: number): boolean {
 
 // 5. Summan av alla tal i listan, med en loop. summa([1, 2, 3]) ger 6.
 export function summa(tal: number[]): number {
-  // TODO
+  let sum: number = 0;
+  for (let i = 0; i < tal.length; i++) {
+    sum += tal[i];
+  }
+  return sum;
 }
 
 // 6. Medelvärdet. snitt([2, 4, 6]) ger 4. Tom lista ger 0.
 export function snitt(tal: number[]): number {
-  // TODO
+  if (tal.length === 0) {
+    return 0;
+  } else {
+    return summa(tal) / tal.length;
+  }
 }
 
 // 7. Det största talet, med en loop. största([3, 9, 4]) ger 9. Tom lista ger undefined.
 export function största(tal: number[]): number | undefined {
-  // TODO
+  if (tal.length === 0) {
+    return undefined;
+  } else {
+    return Math.max(...tal);
+  }
 }
 
 // 8. Upprepa en text. upprepa("ab", 3) ger "ababab". Använd en loop.
 export function upprepa(text: string, antal: number): string {
-  // TODO
+  let upprepadText: string = text;
+  if (antal === 0) return "";
+  for (let i = 1; i < antal; i++) {
+    upprepadText += text;
+  }
+  return upprepadText;
 }
 
 // 9. En kvittorad. kvittorad("Kaffe", 2, 32) ger "2 x Kaffe: 64 kr".
