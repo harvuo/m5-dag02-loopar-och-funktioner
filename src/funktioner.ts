@@ -8,7 +8,7 @@
 export function formateraPris(pris: number): string {
   return Number.isInteger(pris)
     ? `${pris.toString()} kr`
-    : `${pris.toFixed(2).replace(".", ",")} kr`;
+    : `${pris.toFixed(2).replace(".", ",")} kr`; // ännu bättre alternativ toLocaleString('sv-SE')
 }
 
 // 2. Momsdelen av ett pris med 12 % moms (fiktiv sats), avrundad till två decimaler.
@@ -25,7 +25,20 @@ export function medRabatt(pris: number, procent: number): number {
 // 4. Är kaféet öppet? Vardagar 7–18, helger (lördag, söndag) 9–16.
 //    Öppnar vid starttimmen, stänger vid sluttimmen (18 är stängt).
 export function ärÖppet(veckodag: string, klockslag: number): boolean {
-  // TODO
+  if (
+    (veckodag === "lördag" || veckodag === "söndag") &&
+    klockslag >= 9 &&
+    klockslag < 16
+  ) {
+    return true;
+  } else if (
+    veckodag !== "lördag" &&
+    veckodag !== "söndag" &&
+    klockslag >= 7 &&
+    klockslag < 18
+  ) {
+    return true;
+  } else return false;
 }
 
 // 5. Summan av alla tal i listan, med en loop. summa([1, 2, 3]) ger 6.
