@@ -1,3 +1,5 @@
+import "./scope";
+
 // Dag 2, del 1: Loopar. Resultatet syns i Console (F12).
 
 // UPPGIFT 1: skriv ut talen 1 till 10, ett per rad, med en for-loop.
@@ -31,8 +33,8 @@ const namnlista: string[] = [
 ];
 let summa: number = 0;
 for (const [index, pris] of prislista.entries()) {
-    console.log(namnlista[index] + ": " + pris + " kr")
-    summa += pris;
+  console.log(namnlista[index] + ": " + pris + " kr");
+  summa += pris;
 }
 console.log("Summa: " + summa + " kr");
 // TODO
@@ -40,5 +42,5 @@ console.log("Summa: " + summa + " kr");
 // UPPGIFT 5 (utmaning): skriv ut en multiplikationstabell för 3:ans tabell,
 //            "3 x 1 = 3" till "3 x 10 = 30".
 for (let i = 1; i <= 10; i++) {
-    console.log("3 x " + i + " = " + 3 * i);
+  console.log("3 x " + i + " = " + 3 * i);
 }
